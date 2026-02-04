@@ -2,6 +2,7 @@ from datetime import date, datetime, timedelta
 import os
 import time
 import yaml
+import re
 import shutil
 import requests
 from selenium import webdriver
@@ -80,10 +81,13 @@ def make_record_from_row(row, mapping):
 def add_generate_items(row):
     facility_code = {"夢乃井": 1, "夕やけこやけ": 2, "祥吉": 3, "加里屋旅館Q": 4}
     try:
+        room_code_raw = row['room_code']
+        room_code_digits = re.sub(r'\D', '', str(room_code_raw)) if room_code_raw is not None else ''
+        room_code_value = int(room_code_digits) if room_code_digits else 0
         return {
             **row,
             'enquete_key': '-'.join([
-                row['room_code'],
+                str(room_code_value),
                 row['start_date'].strftime('%Y%m%d'),
                 str(facility_code[row['facility_name']])
             ])}
