@@ -80,10 +80,15 @@ def make_record_from_row(row, mapping):
 def add_generate_items(row):
     facility_code = {"夢乃井": 1, "夕やけこやけ": 2, "祥吉": 3, "加里屋旅館Q": 4}
     try:
+        room_code_raw = row['room_code']
+        try:
+            room_code_value = int(room_code_raw)
+        except (TypeError, ValueError):
+            room_code_value = 0
         return {
             **row,
             'enquete_key': '-'.join([
-                row['room_code'],
+                str(room_code_value),
                 row['start_date'].strftime('%Y%m%d'),
                 str(facility_code[row['facility_name']])
             ])}
