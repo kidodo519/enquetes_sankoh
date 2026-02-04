@@ -1,0 +1,84 @@
+﻿db:
+  host: xxxxxxx
+  port: 5432
+  user: user_sankoh_insert
+  password: xxxxxx
+  database: reservation_db_sankoh
+
+csv:
+  input_directory: csv
+  output_directory: processed-csv
+  encoding: Shift_JIS
+
+path:
+  download_path: C:\Users\kifunosato\Downloads
+  driver_path: C:\Users\kifunosato\Desktop\program\chromedriver-win32\chromedriver.exe
+  move_path: C:\Users\kifunosato\Desktop\program\enquetes_sankoh\csv
+
+settings:
+  selenium: true
+  upload: true
+  manual_date: true
+  manual_start_date: '2026-01-04'
+  manual_end_date: '2026-01-31'
+  message:
+    success: false
+    error: true
+
+mappings:
+  string:
+    ip_address: "IPアドレス"
+    user_agent: "ユーザーエージェント"
+    gender: "性別"
+    age: "年齢"
+    travel_form: "旅行形態"
+    facility_name: "宿泊施設"
+    room_code: "お部屋番号"
+    enquete_q1: "問1"
+    enquete_q2: "問2"
+    enquete_q3_1: "問3-(1)"
+    enquete_q3_2: "問3-(2)"
+    enquete_q3_3: "問3-(3)"
+    enquete_q3_4: "問3-(4)"
+    enquete_q3_5: "問3-(5)"
+    enquete_q3_6: "問3-(6)"
+    enquete_q4_1: "問4-(1)"
+    enquete_q4_2: "問4-(2)"
+    enquete_q4_3: "問4-(3)"
+    enquete_q4_4: "問4-(4)"
+    enquete_q5_1: "問5-(1)"
+    enquete_q5_2: "問5-(2)"
+    enquete_q5_3: "問5-(3)"
+    enquete_q5_4: "問5-(4)"
+    enquete_q5_5: "問5-(5)"
+    enquete_q6_1: "問6-(1)"
+    enquete_q6_2: "問6-(2)"
+    enquete_q7: "問7"
+    enquete_q7_other: "問7 その他"
+    enquete_q8: "問8"
+    enquete_q10_1: "問10 誕生日"
+    enquete_q10_2: "問10 結婚記念日"
+    enquete_q10_3: "問10 その他記念日"
+    enquete_q10_4: "問10 その他記念日名"
+    dish_course: "料理コース"
+
+  text:
+    enquete_q9: "問9"
+
+  integer:
+    enquete_number: "アンケート番号"
+
+  date:
+    start_date: "ご宿泊日"
+  
+  datetime:
+    answer_datetime: "ご回答日時"
+
+enquetes:
+  url: https://xxxxxx
+  id: xxxxxx
+  pw: xxxxxx
+
+webhook:
+  name: dataloader-bot
+  url: https://xxxxxx
